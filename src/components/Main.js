@@ -143,8 +143,16 @@ const Main = () => {
 
                 <Contact target="_blank" to={{ pathname: "mailto:devildevil50100@gmail.com" }}>
                     <motion.h2
-                        whileHover={{scale: 1.1}}
-                        whileTap={{scale: 0.9}}
+                        initial={{
+                            y: -200,
+                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                        }}
+                        animate={{
+                            y: -0,
+                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                     >
                         Say hi..
                     </motion.h2>
@@ -152,8 +160,16 @@ const Main = () => {
 
                 <BLOG to="/blog">
                     <motion.h2
-                        whileHover={{scale: 1.1}}
-                        whileTap={{scale: 0.9}}
+                        initial={{
+                            y: -200,
+                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                        }}
+                        animate={{
+                            y: -0,
+                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                     >
                         Blog
                     </motion.h2>
@@ -161,8 +177,16 @@ const Main = () => {
 
                 <WORK to="/work" click={click}>
                     <motion.h2
-                        whileHover={{scale: 1.1}}
-                        whileTap={{scale: 0.9}}
+                        initial={{
+                            y: -200,
+                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                        }}
+                        animate={{
+                            y: -0,
+                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                     >
                         Work
                     </motion.h2>
@@ -171,17 +195,33 @@ const Main = () => {
                 <BottomBar>
                     <ABOUT to="/about" click={click}>
                         <motion.h2
-                        whileHover={{scale: 1.1}}
-                        whileTap={{scale: 0.9}}
-                    >
+                            initial={{
+                                y:200,
+                                transition: {type: 'spring', duration: 1.5, delay: 1}
+                            }}
+                            animate={{
+                                y:-0,
+                                transition: {type: 'spring', duration: 1.5, delay: 1}
+                            }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
                             About.
                         </motion.h2>
                     </ABOUT>
                     <SKILLS to="/skills">
                         <motion.h2
-                        whileHover={{scale: 1.1}}
-                        whileTap={{scale: 0.9}}
-                    >
+                            initial={{
+                                y:200,
+                                transition: {type: 'spring', duration: 1.5, delay: 1}
+                            }}
+                            animate={{
+                                y:-0,
+                                transition: {type: 'spring', duration: 1.5, delay: 1}
+                            }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
                             My Skills.
                         </motion.h2>
                     </SKILLS>
