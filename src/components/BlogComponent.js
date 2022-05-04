@@ -21,7 +21,7 @@ const Box = styled(motion(NavLink))`
     &:hover{
         color: ${props => props.theme.body};
         background-color: ${props => props.theme.text};
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
     }
     @media (max-width: 830px){
         width: calc(10rem + 30vw);

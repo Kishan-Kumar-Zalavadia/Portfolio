@@ -56,6 +56,14 @@ const Text = styled.div`
         font-size: calc(0.5rem + 1.5vw);
         font-weight: 300;
     }
+
+    @media (max-width: 830px){
+        font-size: calc(0.5em + 1.5vw);
+        justify-content: center;
+        row-gap: 10px;
+        padding: 5px;
+        text-align: center;
+    }
 `
 
 const Intro = () => {

@@ -42,6 +42,7 @@ const Grid = styled.div`
     grid-gap: calc(1rem + 2vw);
     @media (max-width: 830px){
         grid-template-columns: repeat(1, minmax(calc(10rem + 15vw), 1fr));
+        padding-left: 37px;
     }
 `
 
@@ -51,7 +52,7 @@ const container = {
     show: {
         opacity: 1,
         transition:{
-            staggerChildren: 0.5,
+            staggerChildren: 0.2,
             duration: 0.5,
         }
     }

@@ -58,6 +58,12 @@ const Main = styled.div`
 
     font-family: 'Ubuntu Mono', monospace;
     font-style: italic;
+
+    
+    @media (max-width: 830px){
+        height: 55vh;
+        letter-spacing: 1px;
+    }
 `
 
 const AboutPage=()=>{

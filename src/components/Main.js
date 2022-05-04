@@ -109,6 +109,12 @@ const Center = styled.button`
         display: ${props => props.click ? 'none' : 'inline-block'};
         padding-top: 1rem;
     }
+
+    @media (max-width: 830px){
+        padding-right: ${props => props.click ? '30px' : ''};
+        height:  ${props => props.click ? '60px' : '35vh'};
+        width:  ${props => props.click ? '60px' : '35vh'};
+    }
 `
 
 const DarkDiv = styled.div`
@@ -137,7 +143,7 @@ const Main = () => {
                 <LogoComponent theme={click ? 'dark' : 'light'} />
                 <SocialIcons theme={click ? 'dark' : 'light'} />
                 <Center click={click}>
-                    <YinYang onClick={() => handleClick()} width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
+                    <YinYang onClick={() => handleClick()} width={click ? 100 : 200} height={click ? 100 : 200} fill='currentColor'/>
                     <span>Click here</span>
                 </Center>
 
@@ -145,11 +151,11 @@ const Main = () => {
                     <motion.h2
                         initial={{
                             y: -200,
-                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                            transition: { type: 'spring', duration: 0.5, delay: 0.5 }
                         }}
                         animate={{
                             y: -0,
-                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                            transition: { type: 'spring', duration: 0.5, delay: 0.5 }
                         }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -162,11 +168,11 @@ const Main = () => {
                     <motion.h2
                         initial={{
                             y: -200,
-                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                            transition: { type: 'spring', duration: 0.5, delay: 0.5 }
                         }}
                         animate={{
                             y: -0,
-                            transition: { type: 'spring', duration: 1.5, delay: 1 }
+                            transition: { type: 'spring', duration: 0.5, delay: 0.5 }
                         }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -197,11 +203,11 @@ const Main = () => {
                         <motion.h2
                             initial={{
                                 y:200,
-                                transition: {type: 'spring', duration: 1.5, delay: 1}
+                                transition: {type: 'spring', duration: 0.5, delay: 0.5}
                             }}
                             animate={{
                                 y:-0,
-                                transition: {type: 'spring', duration: 1.5, delay: 1}
+                                transition: {type: 'spring', duration: 0.5, delay: 0.5}
                             }}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
@@ -213,11 +219,11 @@ const Main = () => {
                         <motion.h2
                             initial={{
                                 y:200,
-                                transition: {type: 'spring', duration: 1.5, delay: 1}
+                                transition: {type: 'spring', duration: 0.5, delay: 0.5}
                             }}
                             animate={{
                                 y:-0,
-                                transition: {type: 'spring', duration: 1.5, delay: 1}
+                                transition: {type: 'spring', duration: 0.5, delay: 0.5}
                             }}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}

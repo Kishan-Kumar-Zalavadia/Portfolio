@@ -8,7 +8,7 @@ const Box = styled.div`
     position: fixed;
     left: 8rem;
     top: 3rem;
-    z-index: 10;
+    z-index: 100;
 
     &>*:nth-child(1){
         animation-delay: 0.2s;

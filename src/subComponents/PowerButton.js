@@ -18,7 +18,7 @@ height: 2.5rem;
 display: flex;
 justify-content: center;
 align-items: center;
-z-index: 3;
+z-index: 100;
 cursor: pointer;
 &:hover{
     background-color: rgba(0,255,0,0.4);
