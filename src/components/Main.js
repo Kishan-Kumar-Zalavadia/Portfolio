@@ -175,7 +175,7 @@ const Main = () => {
                     </motion.h2>
                 </BLOG>
 
-                <WORK to="/work" click={click}>
+                {/* <WORK to="/work" click={click}>
                     <motion.h2
                         initial={{
                             y: -200,
@@ -190,7 +190,7 @@ const Main = () => {
                     >
                         Work
                     </motion.h2>
-                </WORK>
+                </WORK> */}
 
                 <BottomBar>
                     <ABOUT to="/about" click={click}>

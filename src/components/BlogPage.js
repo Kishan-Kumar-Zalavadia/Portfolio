@@ -9,6 +9,8 @@ import BlogComponent from "./BlogComponent";
 import BigTitle from "../subComponents/BigTitle"
 import { motion } from "framer-motion";
 
+import { makeStyles } from "@material-ui/core/styles";
+import {  Paper } from "@material-ui/core"
 
 const MainContainer = styled(motion.div)`
     background-image: url(${img});
@@ -38,6 +40,9 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
     grid-gap: calc(1rem + 2vw);
+    @media (max-width: 830px){
+        grid-template-columns: repeat(1, minmax(calc(10rem + 15vw), 1fr));
+    }
 `
 
 //Frame-motion configuration

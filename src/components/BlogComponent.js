@@ -23,6 +23,9 @@ const Box = styled(motion(NavLink))`
         background-color: ${props => props.theme.text};
         transition: all 0.3s ease;
     }
+    @media (max-width: 830px){
+        width: calc(10rem + 30vw);
+    }
 `
 
 const Image = styled.div`

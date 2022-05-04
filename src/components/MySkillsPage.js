@@ -17,6 +17,10 @@ const Box = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    @media (max-width: 830px){
+        flex-direction: column;
+        height: 200vh;
+    }
 `
 
 const Main = styled.div`
@@ -38,6 +42,10 @@ const Main = styled.div`
     &:hover{
         color: ${props => props.theme.body};
         background-color: ${props => props.theme.text};
+    }
+    @media (max-width: 830px){
+        width: 40vw;
+        z-index: 10;
     }
 `
 
@@ -112,6 +120,7 @@ const MySkillsPage=()=>{
                     </ul>
                     </Description>
                 </Main>
+                
                 <Main>
                 <Title>
                     <Develope width={40} height={40}/> Web Developer
