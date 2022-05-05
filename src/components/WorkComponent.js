@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Box = styled(motion(NavLink))`
-    width: calc(10rem + 15vw);
+    width: calc(10rem + 18vw);
     text-decoration: none;
     height: 20rem;
     padding: 1rem;
@@ -31,7 +31,7 @@ const Box = styled(motion(NavLink))`
 const Image = styled.div`
     background-image: ${props => `url(${props.img})`};
     width: 100%;
-    height: 60%;
+    height: 100%;
     background-size: cover;
     border: 1px solid transparent;
     background-position: center center;
@@ -82,8 +82,8 @@ const Item = {
     }
 }
 
-const BlogComponent = (props) => {
-    const {name, tags, date, imgSrc, link} = props.blog;
+const WorkComponent = (props) => {
+    const {name, tags, date, imgSrc, link} = props.work;
     return (
         <Container
         variants={Item}
@@ -108,4 +108,4 @@ const BlogComponent = (props) => {
     )
 }
 
-export default BlogComponent
+export default WorkComponent

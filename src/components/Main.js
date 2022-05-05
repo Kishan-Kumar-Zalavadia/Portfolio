@@ -34,7 +34,7 @@ const Contact = styled(NavLink)`
     z-index: 1;
 `
 
-const BLOG = styled(NavLink)`
+const WORK = styled(NavLink)`
     color: ${props => props.theme.text};
     position: absolute;
     top: 50%;
@@ -43,7 +43,7 @@ const BLOG = styled(NavLink)`
     text-decoration: none;
     z-index: 1;
 `
-
+/*
 const WORK = styled(NavLink)`
     color: ${props => props.click ? props.theme.body : props.theme.text};
     position: absolute;
@@ -52,7 +52,7 @@ const WORK = styled(NavLink)`
     transform: translate(-50%, -50%) rotate(-90deg);
     text-decoration: none;
     z-index: 1;
-`
+`*/
 
 const BottomBar = styled.div`
     position: absolute;
@@ -143,7 +143,7 @@ const Main = () => {
                 <LogoComponent theme={click ? 'dark' : 'light'} />
                 <SocialIcons theme={click ? 'dark' : 'light'} />
                 <Center click={click}>
-                    <YinYang onClick={() => handleClick()} width={click ? 100 : 200} height={click ? 100 : 200} fill='currentColor'/>
+                    <YinYang onClick={() => handleClick()} width={click ? 100 : 200} height={click ? 100 : 200} fill='currentColor' />
                     <span>Click here</span>
                 </Center>
 
@@ -164,7 +164,7 @@ const Main = () => {
                     </motion.h2>
                 </Contact>
 
-                <BLOG to="/blog">
+                <WORK to="/work">
                     <motion.h2
                         initial={{
                             y: -200,
@@ -177,9 +177,9 @@ const Main = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        Blog
+                        Work
                     </motion.h2>
-                </BLOG>
+                </WORK>
 
                 {/* <WORK to="/work" click={click}>
                     <motion.h2
@@ -202,12 +202,12 @@ const Main = () => {
                     <ABOUT to="/about" click={click}>
                         <motion.h2
                             initial={{
-                                y:200,
-                                transition: {type: 'spring', duration: 0.5, delay: 0.5}
+                                y: 200,
+                                transition: { type: 'spring', duration: 0.5, delay: 0.5 }
                             }}
                             animate={{
-                                y:-0,
-                                transition: {type: 'spring', duration: 0.5, delay: 0.5}
+                                y: -0,
+                                transition: { type: 'spring', duration: 0.5, delay: 0.5 }
                             }}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
@@ -218,12 +218,12 @@ const Main = () => {
                     <SKILLS to="/skills">
                         <motion.h2
                             initial={{
-                                y:200,
-                                transition: {type: 'spring', duration: 0.5, delay: 0.5}
+                                y: 200,
+                                transition: { type: 'spring', duration: 0.5, delay: 0.5 }
                             }}
                             animate={{
-                                y:-0,
-                                transition: {type: 'spring', duration: 0.5, delay: 0.5}
+                                y: -0,
+                                transition: { type: 'spring', duration: 0.5, delay: 0.5 }
                             }}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}

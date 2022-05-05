@@ -1,99 +1,90 @@
-import React, {useRef, useEffect} from "react";
+import react from "react";
 import styled from "styled-components";
-import { ThemeProvider } from "styled-components";
-import { DarkTheme } from "./Themes";
+import img from '../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
+import LogoComponent from "../subComponents/LogoComponent";
+import PowerButton from "../subComponents/PowerButton";
+import SocialIcons from "../subComponents/SocialIcons";
+import {Works} from '../data/WorkData'
+import WorkComponent from "./WorkComponent";
+import BigTitle from "../subComponents/BigTitle"
 import { motion } from "framer-motion";
 
-import LogoComponent from "../subComponents/LogoComponent";
-import SocialIcons from "../subComponents/SocialIcons";
-import PowerButton from "../subComponents/PowerButton";
+import { makeStyles } from "@material-ui/core/styles";
+import {  Paper } from "@material-ui/core"
 
-import { Work } from '../data/WorkData';
-import Card from "../subComponents/Card";
-import { YinYang } from "./AllSvgs";
-import BigTitle from "../subComponents/BigTitle";
+const MainContainer = styled(motion.div)`
+    background-image: url(${img});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100vw;
+`
 
-const Box = styled.div`
-    background-color: ${props => props.theme.body};
-    height: 400vh;
+const Container = styled.div`
+    background-color: ${props => `rgba(${props.theme.bodyRgba},0.8)`};
+    width: 100%;
+    height: auto;
     position: relative;
+    padding-bottom: 5rem;
+`
+
+const Center = styled.div`
     display: flex;
+    justify-content: center;
     align-items: center;
+    padding-top: 10rem;
 `
 
-const Main = styled(motion.ul)`
-    position: fixed;
-    top: 12rem;
-    left: calc(10rem + 15vw);
-    height: 40vh;
-    display: flex;
-    color: white;
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+    grid-gap: calc(1rem + 2vw);
+    @media (max-width: 830px){
+        grid-template-columns: repeat(1, minmax(calc(10rem + 15vw), 1fr));
+        padding-left: 37px;
+    }
 `
 
-const Rotate = styled.span`
-    display: block;
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    width: 80px;
-    height: 80px;
-    z-index: 1;
-`
-
-//frame-motion configuration
+//Frame-motion configuration
 const container = {
     hidden: {opacity: 0},
     show: {
         opacity: 1,
         transition:{
-            staggerChildren: 0.5,
+            staggerChildren: 0.2,
             duration: 0.5,
         }
     }
 }
 
-const WorkPage = () => {
 
-    const ref = useRef(null);   
-    const yingyang = useRef(null);  
-
-    useEffect(() => {
-        let element = ref.current;
-
-        const rotate = () =>{
-            element.style.transform = `traslateX(${-window.pageXOffset}px)`
-
-            yingyang.current.style.transform = `rotate(` + -window.pageXOffset + 'deg)'
-        }
-        
-        window.addEventListener('scroll', rotate)
-        
-        return () => window.removeEventListener('scroll', rotate)
-    },[])
-
-    return (
-        <ThemeProvider theme={DarkTheme}>
-            <Box>
-                <LogoComponent theme='dark' />
-                <SocialIcons theme='dark' />
-                <PowerButton />
-
-                <Main ref={ref} variants={container} initial='hidden' animate='show' >
-                    {
-                        Work.map( d => 
-                            <Card key={d.id} data={d}/>
-                        )
-                    }
-                </Main>
-                <Rotate ref={yingyang}>
-                    <YinYang width={80} height={80} fill={DarkTheme.text}/>
-                </Rotate>
-                <BigTitle text= "WORK" top="10%" right="20%" />
-            </Box>
-
-
-        </ThemeProvider>
-
+const WorkPage=()=>{
+    return(
+        <MainContainer
+            variants={container}
+            initial='hidden'
+            animate= 'show'
+            exit={{
+                opacity:0, transition:{duration:0.5}
+            }}
+        >
+            <Container>
+                <LogoComponent/>
+                <PowerButton/>
+                <SocialIcons/>
+                <Center>
+                    <Grid>
+                        {
+                            Works.map(work => {
+                                return <WorkComponent key={work.id} work={work}/>
+                            })
+                        }
+                    </Grid>
+                </Center>
+                <BigTitle text="WORK" top="4rem" left="5rem" />
+            </Container>
+        </MainContainer>
     )
 }
 export default WorkPage

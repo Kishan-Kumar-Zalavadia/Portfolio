@@ -11,6 +11,8 @@ import BigTitle from "../subComponents/BigTitle"
 import astronaut from '../assets/Images/spaceman.png'
 import { keyframes } from "styled-components";
 
+import { motion } from "framer-motion";
+
 const Box = styled.div`
     background-color: ${props => props.theme.body};
     width: 100vw;
@@ -43,7 +45,7 @@ const Main = styled.div`
     color: ${props => props.theme.text};
     padding: 2rem;
     width: 50vw;
-    height: 60vh;
+    height: 55vh;
     z-index: 3;
     line-height: 1.5;
     display: flex;
@@ -66,27 +68,48 @@ const Main = styled.div`
     }
 `
 
-const AboutPage=()=>{
-    return(
-        <ThemeProvider theme={DarkTheme}>
-            <Box>
-                <LogoComponent theme='dark'/>
-                <SocialIcons theme='dark'/>
-                <PowerButton/>
-                <ParticleComponent theme='dark'/>
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            duration: 0.8,
+        }
+    }
+}
 
-                <Spaceman>
-                    <img src={astronaut} alt="spaceman" />
-                </Spaceman>
-                <Main>
-                An enthusiastic engineering fresher who is capable of using technical skills for the betterment of the organization. A bachelor’s degree in Software Engineering has enhanced my software skills and looking forward to work in a competitive environment that enhances overall learning.
-                I love to create simple yet beautiful websites with great user experience.
-                    
-                </Main>
-                <BigTitle text="ABOUT" top="10%" left="5%" />
-            </Box>
-        </ThemeProvider>
-        
+const MainContainer = styled(motion.div)`
+`
+
+const AboutPage = () => {
+    return (
+        <MainContainer
+            variants={container}
+            initial='hidden'
+            animate='show'
+            exit={{
+                opacity: 0, transition: { duration: 0.6 }
+            }}
+        >
+            <ThemeProvider theme={DarkTheme}>
+                <Box>
+                    <LogoComponent theme='dark' />
+                    <SocialIcons theme='dark' />
+                    <PowerButton />
+                    <ParticleComponent theme='dark' />
+
+                    <Spaceman>
+                        <img src={astronaut} alt="spaceman" />
+                    </Spaceman>
+                    <Main>
+                        I belive that I am an enthusiastic engineering fresher who is capable of using technical skills for the betterment of the organization. A bachelor’s degree in Software Engineering has enhanced my software skills and looking forward to work in a competitive environment that enhances overall learning.
+                        I love to create simple yet beautiful websites with great user experience.
+                    </Main>
+                    <BigTitle text="ABOUT" top="10%" left="5%" />
+                </Box>
+            </ThemeProvider>
+        </MainContainer>
     )
 }
 export default AboutPage
