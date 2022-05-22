@@ -1,5 +1,5 @@
 //Home Page
-import react from "react";
+//import react from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { PowerBtn } from "../components/AllSvgs";

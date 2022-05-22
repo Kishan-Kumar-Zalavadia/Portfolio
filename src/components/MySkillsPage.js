@@ -1,8 +1,8 @@
-import react from "react";
+//import react from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./Themes";
-import { Design, Develope } from './AllSvgs';
+import { Develope } from './AllSvgs';
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";

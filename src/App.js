@@ -11,6 +11,7 @@ import WorkPage from "./components/WorkPage"
 import MySkillsPage from "./components/MySkillsPage"
 import { AnimatePresence } from "framer-motion";
 import SoundBar from "./subComponents/SoundBar";
+import Resume from "./components/Resume";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/work" component={WorkPage} />
           {/*<Route exact path="/work" component={WorkPage} />*/}
           <Route exact path="/skills" component={MySkillsPage} />
+          //<Route exact path="/resume" component={Resume} />
         </Switch>
       </AnimatePresence>
 

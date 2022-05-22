@@ -1,4 +1,4 @@
-import react from "react";
+//import react from "react";
 import styled from "styled-components";
 import img from '../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
 import LogoComponent from "../subComponents/LogoComponent";
@@ -9,8 +9,6 @@ import WorkComponent from "./WorkComponent";
 import BigTitle from "../subComponents/BigTitle"
 import { motion } from "framer-motion";
 
-import { makeStyles } from "@material-ui/core/styles";
-import {  Paper } from "@material-ui/core"
 
 const MainContainer = styled(motion.div)`
     background-image: url(${img});

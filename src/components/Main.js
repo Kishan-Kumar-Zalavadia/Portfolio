@@ -1,5 +1,5 @@
-import react from "react";
-import styled from "styled-components";
+//import react from "react";
+import styled from "styled-components"; 
 import LogoComponent from "../subComponents/LogoComponent";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
@@ -37,8 +37,19 @@ const Contact = styled(NavLink)`
 const WORK = styled(NavLink)`
     color: ${props => props.theme.text};
     position: absolute;
+    //top: 30%;
     top: 50%;
     right: calc(1rem + 2vh);
+    transform: rotate(90deg) translate(-50%, -50%);
+    text-decoration: none;
+    z-index: 1;
+`
+
+const RESUME = styled(NavLink)`
+    color: ${props => props.theme.text};
+    position: absolute;
+    top: 75%;
+    right: calc(0rem + 2vh);
     transform: rotate(90deg) translate(-50%, -50%);
     text-decoration: none;
     z-index: 1;
@@ -147,7 +158,7 @@ const Main = () => {
                     <span>Click here</span>
                 </Center>
 
-                <Contact target="_blank" to={{ pathname: "mailto:devildevil50100@gmail.com" }}>
+                <Contact target="_blank" to={{ pathname: "mailto:kishankumarz1048@gmail.com" }}>
                     <motion.h2
                         initial={{
                             y: -200,
@@ -180,6 +191,23 @@ const Main = () => {
                         Work
                     </motion.h2>
                 </WORK>
+
+                {/* <RESUME to="/resume">
+                    <motion.h2
+                        initial={{
+                            y: -200,
+                            transition: { type: 'spring', duration: 0.5, delay: 0.5 }
+                        }}
+                        animate={{
+                            y: -0,
+                            transition: { type: 'spring', duration: 0.5, delay: 0.5 }
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <a href="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80" download="Imagesd">asfdasf</a>
+                    </motion.h2>
+                </RESUME> */}
 
                 {/* <WORK to="/work" click={click}>
                     <motion.h2
